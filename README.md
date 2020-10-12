@@ -30,7 +30,15 @@ To print path upto the root node from a given word in a passage
 python xml-print-path.py example/toy.xml
 
 ```
-It asks interactively for which word you want to see the path 
+It prints paths for all the words upto the root node.
+
+# xml read 
+
+```
+python prog/xml-read.py example/toy.xml
+```
+
+
 
 
 

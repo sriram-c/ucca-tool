@@ -53,11 +53,13 @@ def xmltoconll(passage):
 def find_path(node,path):
         if(len(node.parents) >= 1):
             if(node.tag != 'Word'):
-                path.append(node.ID+'--'+node.ftag+':'+descr[node.ftag]+'-->'+node.parents[0].ID)
+                #path.append(node.ID+'--'+node.ftag+':'+descr[node.ftag]+'-->'+node.parents[0].ID)
+                path.append(('-->('+node.ftag+':'+descr[node.ftag]+')-->'+node.parents[0].ID))
+
             else:
-                path.append(node.text+'--'+'Terminal'+'-->'+node.parents[0].ID)
+                #path.append(node.text+'--'+'Terminal'+'-->'+node.parents[0].ID)
+                path.append((node.text+'--Terminal-->'+node.parents[0].ID))
             for j in node.parents:
-                print(path)
                 find_path(j,path)
         return path
 
@@ -82,13 +84,12 @@ def main(args):
             for node in passage.nodes:
                 t = passage.nodes[node]
                 if(re.match(rf'\b{word}\b',t.text, re.IGNORECASE)):
-                    print('Word: %s\nWord ID: %s' %(t.text,t.ID))
+                    #print('Word: %s\nWord ID: %s' %(t.text,t.ID))
                     #ans = input('\nDo you want to continue with wordi Id : %s', t.ID)
                     path = []
                     path = find_path(passage.nodes[t.ID],path)
                     break
-            for i in path:
-                print(i)
+            print(' '.join(path))
 
 
 if __name__ == "__main__":
