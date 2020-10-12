@@ -2,7 +2,7 @@
 
 This repository contains various tools to visualize and understand the ucca parse xml files.
 
-#Print path from a xml file
+# Print path from a xml file
 
 To print path from word to root node from a ucca parsed xml file
 
