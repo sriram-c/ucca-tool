@@ -2,6 +2,21 @@
 
 This repository contains various tools to visualize and understand the ucca parse xml files.
 
+#Print path from a xml file
+
+To print path from word to root node from a ucca parsed xml file
+
+```
+python prog/xml-print-path.py example/toy.xml
+```
+# xml read 
+
+It prints the path as above but in an interactive manner for a given word
+```
+python prog/xml-read.py example/toy.xml
+```
+
+
 # View construction:
 
 To view various linguistic constructions in a passage.
@@ -20,23 +35,6 @@ python prog/visualize.py  -o image examples/toy.xml -o
 ```
 
 It will create the image (png file) inside the 'image' directory.
-
-# print path 
-
-To print path upto the root node from a given word in a passage
-
-
-```
-python xml-print-path.py example/toy.xml
-
-```
-It prints paths for all the words upto the root node.
-
-# xml read 
-
-```
-python prog/xml-read.py example/toy.xml
-```
 
 
 

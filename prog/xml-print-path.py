@@ -20,7 +20,7 @@ def find_path(node,path):
                 path.append(('-->('+node.ftag+':'+descr[node.ftag]+')-->'+node.parents[0].ID))
             else:
                 #path.append(node.text+'--'+'Terminal'+'-->'+node.parents[0].ID)
-                path.append((node.text+'--Terminal-->'+node.parents[0].ID))
+                path.append((node.text+'('+str(node.ID)+')'+'--Terminal-->'+node.parents[0].ID))
             for j in node.parents:
                 find_path(j,path)
         return path
