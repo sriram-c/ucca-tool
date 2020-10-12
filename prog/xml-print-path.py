@@ -16,9 +16,11 @@ descr = {'Q':'Unknown', 'T':'Unknown', 'Terminal':'Terminal_node','P':'Process' 
 def find_path(node,path):
         if(len(node.parents) >= 1):
             if(node.tag != 'Word') and (node.tag != 'Punctuation'):
-                path.append(node.ID+'--'+node.ftag+':'+descr[node.ftag]+'-->'+node.parents[0].ID)
+                #path.append(node.ID+'--'+node.ftag+':'+descr[node.ftag]+'-->'+node.parents[0].ID)
+                path.append(('-->('+node.ftag+':'+descr[node.ftag]+')-->'+node.parents[0].ID))
             else:
-                path.append(node.text+'--'+'Terminal'+'-->'+node.parents[0].ID)
+                #path.append(node.text+'--'+'Terminal'+'-->'+node.parents[0].ID)
+                path.append((node.text+'--Terminal-->'+node.parents[0].ID))
             for j in node.parents:
                 find_path(j,path)
         return path
@@ -45,21 +47,28 @@ def main(args):
                             tmp_c = []
                             for n in l.parents[0].children:
                                 tmp_c.append(n.text)
-                            print('Word: %s\nWord ID: %s' %(tmp_c,l.parents[0].ID))
+                            #print('Word: %s\nWord ID: %s' %(tmp_c,l.parents[0].ID))
                             find_id = l.parents[0].ID
                             path = []
+                            path.append(' '.join(tmp_c))
                             path = find_path(sen.nodes[find_id], path)
+                            print(' '.join(path))
+                            '''
                             for j in path:
                                 print(j)
+                            '''
                             print('-------')
 
                     else:
-                        print('Word: %s\nWord ID: %s' % (l.text, l.ID))
+                        #print('Word: %s\nWord ID: %s' % (l.text, l.ID))
                         find_id = l.ID
                         path = []
                         path = find_path(sen.nodes[find_id],path)
+                        print(' '.join(path))
+                        '''
                         for j in path:
                             print(j)
+                        '''
                         print('-------')
             print('------------------------------------------------------------------')
 
