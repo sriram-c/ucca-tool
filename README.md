@@ -17,6 +17,15 @@ python prog/xml-read.py example/toy.xml
 ```
 
 
+# Print path from a xml file in reverse order
+
+To print path from root node to terminal (word) from a ucca parsed xml file
+
+```
+python prog/xml-print-path-reverse.py example/116010.xml
+```
+
+
 # View construction:
 
 To view various linguistic constructions in a passage.
