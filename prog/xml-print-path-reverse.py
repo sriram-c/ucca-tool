@@ -27,12 +27,21 @@ def find_path(node,path):
 
 
 def find_children(node, path, level):
+    remote_found = 0
+    for edge in node:
+        if(edge.attrib.get('remote')):
+            t12 = edge
+            remote_found = 1
+
     for ch in node.children:
         if (ch.tag != 'Word') and (ch.tag != 'Punctuation'):
-            path.append((ch.ftag, ch.ID, level+1))
+            if(remote_found) and (ch.ID == t12.child.ID):
+                path.append((ch.ftag, ch.ID+'*', level+1,True))
+            else:
+                path.append((ch.ftag, ch.ID, level+1,False))
             find_children(ch, path, level+1)
         else:
-            path.append((ch.text, ch.ID, level+1))
+            path.append((ch.text, ch.ID, level+1,False))
             path.append('End')
 
     return path
@@ -57,7 +66,7 @@ def main(args):
                 print('\n')
                 path = []
                 level = 1
-                path.append((i.ftag, i.ID, level))
+                path.append((i.ftag, i.ID, level,False))
                 path = find_children(i, path, level)
                 end = 0
                 if(first):
@@ -75,6 +84,7 @@ def main(args):
                     rel = j[0]
                     nd = j[1]
                     tab = int(j[2])
+                    remote = j[3]
                     if(end):
                         q_mark = 0
                         for k in range(0,tab_len[tab-1]):
@@ -88,7 +98,10 @@ def main(args):
                         rel_desc = rel+':' +descr[rel]
                     else:
                         rel_desc = rel
-                    pstr = pstr+'|-->('+rel_desc+')-->'+nd
+                    if(remote):
+                        pstr = pstr + '|-->Remote(' + rel_desc + ')-->' + nd
+                    else:
+                        pstr = pstr+'|-->('+rel_desc+')-->'+nd
                     tab_len[tab] = len(pstr)
 
             print('-----------------------------------\n')
