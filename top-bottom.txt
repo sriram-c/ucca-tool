@@ -1,0 +1,56 @@
+sentence 0
+
+["Golf became a passion for his oldest daughter : she took daily lessons and became very good , reaching the semi - final of the Connecticut Young Women 's Golf Championship ."]
+
+
+
+1.1|-->(H:Parallel_Scene)-->1.2|-->(A:Participant)-->1.28|-->(Golf)-->0.1
+   .                           |-->(D:Adverbial)-->1.29|-->(became)-->0.2
+   .                           |-->(P:Process)-->1.30|-->(E:Elaborator)-->1.36|-->(a)-->0.3
+   .                           .                     |-->(C:Center)-->1.37|-->(passion)-->0.4
+   .                           |-->(A:Participant)-->1.31|-->(R:Relator)-->1.32|-->(for)-->0.5
+   .                           .                         |-->(A:Participant)-->1.33|-->(his)-->0.6
+   .                           .                         |-->(D:Adverbial)-->1.34|-->(oldest)-->0.7
+   .                           .                         |-->(S:State)-->1.35|-->(daughter)-->0.8
+
+
+   |-->(H:Parallel_Scene)-->1.3|-->(A:Participant)-->1.23|-->(she)-->0.10
+   .                           |-->(P:Process)-->1.24|-->(F:Function)-->1.26|-->(took)-->0.11
+   .                           .                     |-->(C:Center)-->1.27|-->(lessons)-->0.13
+   .                           |-->(T:Unknown)-->1.25|-->(daily)-->0.12
+
+
+   |-->(L:Linker)-->1.4|-->(and)-->0.14
+
+
+   |-->(H:Parallel_Scene)-->1.5|-->(D:Adverbial)-->1.20|-->(became)-->0.15
+   .                           |-->(D:Adverbial)-->1.21|-->(very)-->0.16
+   .                           |-->(P:Process)-->1.22|-->(good)-->0.17
+   .                           |-->(A:Participant)-->1.23|-->(she)-->0.10
+
+
+   |-->(H:Parallel_Scene)-->1.6|-->(P:Process)-->1.10|-->(reaching)-->0.19
+   .                           |-->(A:Participant)-->1.11|-->(E:Elaborator)-->1.12|-->(the)-->0.20
+   .                           .                         |-->(E:Elaborator)-->1.13|-->(semi)-->0.21
+   .                           .                         |-->(C:Center)-->1.14|-->(final)-->0.23
+   .                           .                         |-->(E:Elaborator)-->1.15|-->(R:Relator)-->1.17|-->(of)-->0.24
+   .                           .                         .                        |-->(E:Elaborator)-->1.18|-->(the)-->0.25
+   .                           .                         .                        |-->(C:Center)-->1.19|-->(Connecticut)-->0.26
+   .                           .                         .                        .                    |-->(Young)-->0.27
+   .                           .                         .                        .                    |-->(Women)-->0.28
+   .                           .                         .                        .                    |-->('s)-->0.29
+   .                           .                         .                        .                    |-->(Golf)-->0.30
+   .                           .                         .                        .                    |-->(Championship)-->0.31
+   .                           .                         |-->(U:Punctuation)-->1.16|-->(-)-->0.22
+   .                           |-->(A:Participant)-->1.23|-->(she)-->0.10
+
+
+   |-->(U:Punctuation)-->1.7|-->(:)-->0.9
+
+
+   |-->(U:Punctuation)-->1.8|-->(,)-->0.18
+
+
+   |-->(U:Punctuation)-->1.9|-->(.)-->0.32
+-----------------------------------
+
