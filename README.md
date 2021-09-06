@@ -2,6 +2,11 @@
 
 This repository contains various tools to visualize and understand the ucca parse xml files.
 
+### Requirements:
+
+Please install the ucca package from the below github link
+https://github.com/huji-nlp/ucca
+
 ### Print path from a xml file
 
 To print path from word to root node from a ucca parsed xml file
