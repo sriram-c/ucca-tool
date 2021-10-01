@@ -42,7 +42,7 @@ python prog/find_construction.py examples/116.xml
 
 ### visualize a xml file
 
-To visualize a ucca parserd file in xml format in a tree structure.
+To visualize a ucca parsed file in xml format in a tree structure.
 
 ```
 python prog/visualize.py  -o image examples/toy.xml -o 
@@ -51,6 +51,14 @@ python prog/visualize.py  -o image examples/toy.xml -o
 It will create the image (png file) inside the 'image' directory.
 
 
+### To visualize a xml file in text format.
+
+To visualize a ucca parsed file (given in xml file) in the text output(readable).
+
+```
+python prog/ucca-xml-print.py example/116.xml
+```
+The output will be printed in stdout.
 
 
 
